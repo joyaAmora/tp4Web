@@ -1,0 +1,10 @@
+<%# Jade Phaneuf %>
+<%# 2020-11-19 %>
+<% if user_signed_in? %>
+    Bonjour <%= current_user.email %> <br/>
+    <h1> Liste des recettes </h1> <br/>
+    <%= link_to "LogOut", destroy_user_session_path, method: :delete %><br/>
+<% else %>
+    <%= link_to "LogIn", new_user_session_path %><br/>
+<% end %>
+

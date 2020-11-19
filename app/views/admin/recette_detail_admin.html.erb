@@ -1,0 +1,17 @@
+<%# Jade Phaneuf %>
+<%# 2020-11-04 %>
+
+<h1>Détail d'une recette</h1>
+
+<h2>Recette de l'usager <%= @recette.user.nom %> <%= @recette.user.prenom %>  </h2>
+<h3>Nom de la recette: <%= @recette.titre %></h3>
+
+<h4>Liste des ingrédients </h4>
+
+<p> <% @recette.recette_ingredients.each do |i| %>
+    <%= i.ingredient.nom %> <%= i.quantite %> <%= i.unite %><br/>
+    <% end %>
+</p>
+
+<h4>Mode de préparation:</h4>
+<div> <%= @recette.etapes %></div>

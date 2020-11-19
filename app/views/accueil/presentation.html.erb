@@ -1,0 +1,10 @@
+<%# Jade Phaneuf %>
+<%# 2020-11-04 %>
+<h1> Liste des recettes </h1> <br/>
+
+<% @recettes.order(:titre).each do |recette| %>
+    <h3>Recette id: <%= recette.id %></h3>
+      <h2><i><%= recette.titre %></i></h2>    
+      <h4><%= link_to "details", "/recette/#{recette.id}" %></h4>    
+    <br/>
+<% end %>
