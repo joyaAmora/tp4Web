@@ -1,10 +1,16 @@
 <%# Jade Phaneuf %>
-<%# 2020-11-04 %>
+<%# 2020-11-19 %>
+<% if user_signed_in? %>
+    Bonjour <%= current_user.email %> <br/>
+    <%= link_to "LogOut", destroy_user_session_path, method: :delete %><br/>
 
-<h1> Detail de la recette </h1> <br/>
-<h2><%= @recette.titre %></h2>
+    <h1> Detail de la recette </h1> <br/>
+      <h2><%= @recette.titre %></h2>
 
-<h3>Ingredients</h3> <br/>
-<% @recette.ingredients.each do |ingredient| %>
-      <h4><i><%= ingredient.nom %></i></h4>    
+      <h3>Ingredients</h3> <br/>
+      <% @recette.ingredients.each do |ingredient| %>
+            <h5><i><%= ingredient.nom %></i></h5>    
+      <% end %>
+<% else %>
+        <%= link_to "LogIn", new_user_session_path %><br/>
 <% end %>

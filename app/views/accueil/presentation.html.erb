@@ -1,10 +1,16 @@
-<%# Jade Phaneuf %>
-<%# 2020-11-04 %>
-<h1> Liste des recettes </h1> <br/>
+<!-- Jade Phaneuf 2020-11-19 -->
 
+<% if user_signed_in? %>
+    Bonjour <%= current_user.email %> <br/>
+    <%= link_to "LogOut", destroy_user_session_path, method: :delete %><br/>
+    <h4>Lien vers vos recettes</h4><%= link_to "mes recettes", "/mesrecettes" %><br/><br/>
+<% else %>
+        <%= link_to "LogIn", new_user_session_path %><br/>
+<% end %>
+<h1> Liste complète des recettes </h1>
 <% @recettes.order(:titre).each do |recette| %>
-    <h3>Recette id: <%= recette.id %></h3>
-      <h2><i><%= recette.titre %></i></h2>    
+    <h5>Recette id: <%= recette.id %></h5>
+      <h3><i><%= recette.titre %></i></h3>    
       <h4><%= link_to "details", "/recette/#{recette.id}" %></h4>    
     <br/>
 <% end %>

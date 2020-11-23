@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # Validations
   validates :email, uniqueness: true, presence: true
   validate :valide_email # Voir la méthode privée du même nom
-  validates :nom, :prenom, presence: true
+  #validates :nom, :prenom, presence: true
 
   # Fonctionnalité privé au modèle
   private

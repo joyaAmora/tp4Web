@@ -10,7 +10,5 @@ class AccueilController < ApplicationController
 
     def mesRecettes
         @currentUser = current_user
-        @mesRecettes = Recette.where(:user_id => @current_user.id)
-        render 'mesrecettes'
     end
 end
