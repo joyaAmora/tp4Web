@@ -1,13 +1,15 @@
 <%# Jade Phaneuf %>
 <%# 2020-11-04 %>
+<%= stylesheet_link_tag 'admin' %>
+<%= image_tag("coffeehouse2.jpg") %>
 <h1> Liste des recettes groupées par utilisateur</h1>
 
 <% @users.each do |u| %>
-    <h2> Utilisateur: <%= u.prenom %> <%= u.nom %> </h2>
-    <h3> Recette : </h3>
+    <h3> Utilisateur: <%= u.prenom %> <%= u.nom %> </h3>
+    <h4> Recette : </h4>
     <p>    
         <% u.recettes.each do |r| %>
-            ==> <%= r.titre %> 
+            ==> <%= r.titre %><br/> 
         <% end %>
     </p>
 <% end %>
