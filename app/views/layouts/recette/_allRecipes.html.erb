@@ -1,0 +1,11 @@
+<!-- Jade Phaneuf 2020-12-07 -->
+<h1> Liste complète des recettes </h1>
+
+<% @recettes.order(:titre).each do |recette| %>
+    <div class="w3-quarter">
+        <%= image_tag "popsicle.jpg", style: "width:100%" %>
+        <h5>Recette id: <%= recette.id %></h5>
+        <h3><i><%= recette.titre %></i></h3>    
+        <h4><%= link_to "details", "/recette/#{recette.id}", method: :get %></h4>    
+    </div>
+<% end %>

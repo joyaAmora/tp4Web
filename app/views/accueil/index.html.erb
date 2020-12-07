@@ -1,14 +1,11 @@
 <!-- Jade Phaneuf 2020-12-03 -->
 <!-- !PAGE CONTENT! -->
-<% @recettes.each do |recette| %>
-    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
+<%= stylesheet_link_tag 'w3' %>
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
     <!-- First Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-        <div class="w3-quarter">
-            <%= image_tag("croissant.jpg", width: '100%') %>
-            <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            </div>
+        <%= render "layouts/recette/allRecipes" %>
     </div>
-<% end %>
+    
+    <%= render "layouts/menu/footer" %>
+</div>

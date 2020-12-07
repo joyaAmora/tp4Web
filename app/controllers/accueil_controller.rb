@@ -12,7 +12,8 @@ class AccueilController < ApplicationController
         @recettes = Recette.all
     end
 
-    def mesRecettes
-        @currentUser = current_user
+    def mesrecettes
+        @recettes = current_user.recettes
+        render 'accueil/mesrecettes'
     end
 end

@@ -8,6 +8,7 @@
       <h2><%= @recette.titre %></h2>
 
       <h3>Ingredients</h3> <br/>
+      <%= image_tag "cherries.jpg", style: "width:20%" %>
       <% @recette.ingredients.each do |ingredient| %>
             <h5><i><%= ingredient.nom %></i></h5>    
       <% end %>

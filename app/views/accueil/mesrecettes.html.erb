@@ -1,16 +1,10 @@
 <!--Jade Phaneuf 2020-11-19 -->
-<% if user_signed_in? %>
-    Bonjour <%= current_user.email %> <br/>
-    <%= link_to "LogOut", destroy_user_session_path, method: :delete %><br/>
-    <h1> Liste de vos recettes </h1> <br/>
-
-    <% current_user.recettes.each do |recette| %>
-        <%= recette.titre %><br/>
-    <% end %>
-
-<% else %>
-        <%= link_to "LogIn", new_user_session_path %><br/>
-<% end %>
-
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+        <%= render "layouts/recette/allRecipes" %>
+    </div>
     
-
+    <%= render "layouts/menu/footer" %>
+</div>
