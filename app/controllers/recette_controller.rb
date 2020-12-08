@@ -1,5 +1,5 @@
 #Jade Phaneuf
-#2020-11-04
+#2020-12-08
 class RecetteController < ApplicationController
     layout 'general'
     before_action :authenticate_user!

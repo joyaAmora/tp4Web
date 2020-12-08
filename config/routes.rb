@@ -1,5 +1,5 @@
 #Jade Phaneuf
-#2020-11-19
+#2020-12-08
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
