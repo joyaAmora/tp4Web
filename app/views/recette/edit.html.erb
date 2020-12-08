@@ -1,0 +1,18 @@
+<!-- Jade Phaneuf 2020-12-07 -->
+
+<%= form_for :recette, url: recette_path(@recette), method: :patch do |f| %>
+
+    <p>
+        <%= f.label :titre %> <br/>
+        <%= f.text_field :titre, class: "form-control", size: "80x6" %>
+    </p>
+
+    <p>
+        <%= f.label :etapes %> <br/>
+        <%= f.text_area :etapes, class: "form-control", size: "80x16" %>
+    </p>
+
+    <p>
+        <%= f.submit class: "btn btn-primary" %>
+    </p>
+<% end %>

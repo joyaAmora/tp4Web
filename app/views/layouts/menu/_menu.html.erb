@@ -11,6 +11,7 @@
         <% end %>
         <p><%= current_user.nom %>
         <%= link_to 'Mes recettes', "mesrecettes", method: :get, class:"w3-bar-item w3-button"%>
+        <%= link_to 'Ajouter une recette (+)', "/ajoutRecette", method: :get, class:"w3-bar-item w3-button" %>
         <%= link_to "LogOut", destroy_user_session_path, method: :delete, class:"w3-bar-item w3-button"%>
     <% else %>
         <%= link_to 'LogIn', new_user_session_path, method: :get, class:"w3-bar-item w3-button" %>

@@ -15,6 +15,7 @@ class Admin::UsersController < AdminController
 
     def recette_detail_admin
         @recette = Recette.find(params[:id])
+        @user = current_user
         respond_to do |format|
             format.html
             format.json {render :json => @recette.ingredients.to_json}

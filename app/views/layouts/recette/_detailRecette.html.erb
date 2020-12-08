@@ -1,0 +1,11 @@
+<!-- Jade Phaneuf 2020-12-07 -->
+<h1> <%= @recettes.titre %>  <br/> </h1>
+<h2> Ingredient : </h2>
+<%= link_to "Editer", edit_recette_path(@recettes) %>
+    <br/>
+    <%= image_tag "cherries.jpg", style: "width:20%" %>
+    <%  @recettes.ingredients.each do |ingredient| %>
+        <p><%= ingredient.nom %> <br/> </p>
+    <% end %>
+    <h4>Préparation </h4>
+        <p><%= @recettes.etapes %> <br/> </p>

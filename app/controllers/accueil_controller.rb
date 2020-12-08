@@ -16,4 +16,5 @@ class AccueilController < ApplicationController
         @recettes = current_user.recettes
         render 'accueil/mesrecettes'
     end
+
 end

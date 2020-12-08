@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'accueil#index'
   get 'mesrecettes', to: 'accueil#mesrecettes'
-  get 'recette/:id', to: 'recette#show_1'
+  get 'recette/:id', to: 'recette#detailRecette'
+  get 'ajoutRecette', to: 'recette#ajoutRecette'
+  resources :recette
 
   namespace :admin do
     get '/recette', to: 'users#recettes_admin'
